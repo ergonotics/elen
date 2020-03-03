@@ -10,7 +10,7 @@ require 'mina/git'
 #   branch       - Branch name to deploy. (needed by mina/git)
 
 set :application_name, 'elen'
-# set :domain, '51.68.141.219'
+set :domain, '51.68.141.219'
 set :deploy_to, '51.68.141.219:/home/deployer/elen'
 set :repository, 'git://github.com/ergonotics/elen'
 set :branch, 'master'
