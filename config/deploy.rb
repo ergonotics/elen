@@ -10,15 +10,15 @@ require 'mina/git'
 #   branch       - Branch name to deploy. (needed by mina/git)
 
 set :application_name, 'elen'
-set :domain, '51.68.141.219'
-set :deploy_to, '51.68.141.219:/home/deployer/elen'
+set :domain, 'lnfound.be'
+set :deploy_to, '/home/deployer/elen'
 set :repository, 'git://github.com/ergonotics/elen'
 set :branch, 'master'
 
 # Optional settings:
 set :user, 'deployer'          # Username in the server to SSH to.
-#   set :port, '30000'           # SSH port number.
-#   set :forward_agent, true     # SSH forward_agent.
+#   set :port, '30000'         # SSH port number.
+#   set :forward_agent, true   # SSH forward_agent.
 
 # Shared dirs and files will be symlinked into the app-folder by the 'deploy:link_shared_paths' step.
 # Some plugins already add folders to shared_dirs like `mina/rails` add `public/assets`, `vendor/bundle` and many more
