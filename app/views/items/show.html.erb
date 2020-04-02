@@ -6,28 +6,14 @@
 </p>
 
 <p>
-  <strong>Code:</strong>
-  <%= @item.code %>
-</p>
-
-<p>
   <strong>Comment:</strong>
   <%= @item.comment %>
 </p>
 
 <p>
-  <strong>Type:</strong>
-  <%= @item.type %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @item.user_id %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @item.image %>
+  <strong>Photo:</<strong>
+  <%= link_to @item.photo.filename, rails_blob_path(@item.photo, disposition: "attachment") %>
+  <%= image_tag @item.photo %>
 </p>
 
 <%= link_to 'Edit', edit_item_path(@item) %> |

@@ -2,16 +2,8 @@
 
 one:
   name: MyString
-  code: MyString
-  comment: MyString
-  type: 1
-  user: one
-  image: 
+  comment: MyText
 
 two:
   name: MyString
-  code: MyString
-  comment: MyString
-  type: 1
-  user: two
-  image: 
+  comment: MyText
