@@ -1,0 +1,61 @@
+<%= form_for @changeset, @action, [multipart: true], fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <%= label f, :name %>
+  <%= text_input f, :name %>
+  <%= error_tag f, :name %>
+
+  <%= label f, :status %>
+  <%= select f, :status, [[key: "OK", value: 0], [key: "Perdu", value: 1], [key: "Trouvé", value: 2]] %>
+  <%= error_tag f, :status %>
+
+  <%= label f, :type %>
+  <%= select f, :type, [
+    [key: "inconnu", value: 0],
+    [key: "téléphone", value: 1],
+    [key: "sac à main", value: 2],
+    [key: "clés", value: 3],
+    [key: "Portefeuille", value: 4],
+    [key: "écharpe ou bonnet", value: 5],
+    [key: "lunettes", value: 6],
+    [key: "vêtements", value: 7],
+    [key: "écouteurs ou casque audio", value: 8],
+    [key: "carte bancaire", value: 9],
+    [key: "documents nominatifs", value: 10],
+    [key: "appareils électroniques", value: 11],
+    [key: "vélo, moto, trottinette, buggy… et accessoires", value: 12],
+    [key: "bijoux", value: 13],
+    [key: "outils, ustensiles", value: 14],
+    [key: "instruments de musique", value: 15],
+    [key: "prothèses, aide optique, médicale ou orthopédique", value: 16],
+    [key: "articles de sport", value: 17],
+    [key: "sacs ou valises", value: 18],
+    [key: "articles de vacances", value: 19],
+    [key: "fournitures de bureau/papier", value: 20]
+  ] %>
+  <%= error_tag f, :type %>
+
+  <%= label f, :photo %>
+  <%= file_input f, :photo %>
+  <%= error_tag f, :photo %>
+
+  <%= label f, :message %>
+  <%= text_input f, :message %>
+  <%= error_tag f, :message %>
+
+  <%= label f, :latitude %>
+  <%= text_input f, :latitude %>
+  <%= error_tag f, :latitude %>
+
+  <%= label f, :longitude %>
+  <%= text_input f, :longitude %>
+  <%= error_tag f, :longitude %>
+
+  <div>
+    <%= submit "Save" %>
+  </div>
+<% end %>

@@ -1,0 +1,10 @@
+<%= link "Back", to: Routes.photo_path(@conn, :index) %>
+<%= link "Edit", to: Routes.photo_path(@conn, :edit, @photo) %>
+
+<div>
+  <strong>Uuid:</strong>
+  <%= @photo.uuid %>
+
+  <img src="<%= Elen.Photo.url({@photo.photo, @photo}, :thumb) %>"/>
+  <img src="<%= Elen.Photo.url({@photo.photo, @photo}) %>"/>
+</div>

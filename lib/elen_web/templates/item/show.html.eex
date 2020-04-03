@@ -1,0 +1,17 @@
+<h1>Show Item</h1>
+
+<p><strong>Name: </strong><%= @item.name %></p>
+<p><strong>Code: </strong><%= @item.code %></p>
+
+<img src="<%= Elen.Photo.url({@item.photo, @item}, :original) %>"/>
+
+<p><strong>Status: </strong><%= @item.status %></p>
+<p><strong>Message: </strong><%= @item.message %></p>
+<p><strong>Latitude: </strong><%= @item.latitude %></p>
+<p><strong>Longitude: </strong><%= @item.longitude %></p>
+<p><strong>User: </strong><%= @item.user_id %></p>
+
+<img src = "data:image/png;base64, <%= Elen.Content.Item.qrcode(@item) %>" />
+
+<span><%= link "Edit", to: Routes.item_path(@conn, :edit, @item) %></span>
+<span><%= link "Back", to: Routes.item_path(@conn, :index) %></span>

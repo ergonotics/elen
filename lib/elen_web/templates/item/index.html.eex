@@ -1,0 +1,31 @@
+<h1>Listing Items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Photo</th>
+      <th>Name</th>
+      <th>Message</th>
+      <th>Code</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for item <- @items do %>
+    <tr>
+      <td><img src="<%= Elen.Photo.url({item.photo, item}, :thumb) %>"/></td>
+      <td><%= item.name %></td>
+      <td><%= item.message %></td>
+      <td><%= item.code %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.item_path(@conn, :show, item) %></span>
+        <span><%= link "Edit", to: Routes.item_path(@conn, :edit, item) %></span>
+        <span><%= link "Delete", to: Routes.item_path(@conn, :delete, item), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Item", to: Routes.item_path(@conn, :new) %></span>

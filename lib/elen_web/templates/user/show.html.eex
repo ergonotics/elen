@@ -1,0 +1,8 @@
+<h1>Show User</h1>
+
+<p><strong>Nickname:</strong> <%= @user.nickname %></p>
+<p><strong>Firstname:</strong> <%= @user.firstname %></p>
+<p><strong>Lastname:</strong> <%= @user.lastname %></p>
+
+<span><%= link "Edit", to: Routes.user_path(@conn, :edit, @user) %></span>
+<span><%= link "Back", to: Routes.user_path(@conn, :index) %></span>

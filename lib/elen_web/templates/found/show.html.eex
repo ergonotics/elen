@@ -1,0 +1,2 @@
+<h1>J'ai trouvé !!!</h1>
+<h2><%= @item.name%></h2>

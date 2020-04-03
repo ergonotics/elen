@@ -1,0 +1,10 @@
+<section class="phx-hero">
+  <h1><%= gettext "Welcome to %{name}!", name: "LNF" %></h1>
+  <p>La solution pour vos objets perdus <br/>made in Brussels 🇧🇪.</p>
+</section>
+
+<%= if @current_user do %>
+  <%= live_render(@conn,
+                  ElenWeb.DashboardLive,
+                  session: %{current_user: @current_user}) %>
+<% end%>
